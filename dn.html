@@ -4,28 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дні Народження</title>
-    <link rel="stylesheet" href="mates.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Загальні стилі */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 20px;
+        }
+
+        header h1 {
+            color: #374785;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .birthdays-section {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .birthdays-list {
+            list-style: none;
+        }
+
+        .birthdays-list li {
+            font-size: 1.2rem;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .birthdays-list li:last-child {
+            border-bottom: none;
+        }
+
+        .name {
+            font-weight: 700;
+            color: #4a6fa5;
+        }
+
+        .date {
+            font-weight: 400;
+            color: #555;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-    <h1>Дні Народження</h1>
-    <ul>
-                <li>Бень Віталій - 12.11</li>
-                <li>Биков Владислав - 28.01</li>
-                <li>Боднар Софія - 17.01</li>
-                <li>Гаврилко Діана - 11.07 </li>
-                <li>Замойський Владислав - 27.06</li>
-                <li>Лободєдова Альбіна - 07.07</li>
-                <li>Ляховський Артем - 16.10 </li>
-                <li>Ляховська Вікторія - 15.10</li>
-                <li>Михайлишин Олександр - 03.11 </li>
-                <li>Поляк Роман - 30.09</li>
-                <li>Стандричук Анна - 30.03  </li>
-                <li>Філяс Анжеліка - 02.10</li>
-                <li>Чикирка Данило - 05.09 </li>
-                <li>Шушняк Вікторія - 28.12</li>
+    <header>
+        <h1>Народження</h1>
+    </header>
+
+    <section class="birthdays-section">
+        <ul class="birthdays-list">
+            <li><span class="name">Бень Віталій</span> <span class="date">12.11</span></li>
+            <li><span class="name">Биков Владислав</span> <span class="date">28.01</span></li>
+            <li><span class="name">Боднар Софія</span> <span class="date">17.01</span></li>
+            <li><span class="name">Гаврилко Діана</span> <span class="date">11.07</span></li>
+            <li><span class="name">Замойський Владислав</span> <span class="date">27.06</span></li>
+            <li><span class="name">Лободєдова Альбіна</span> <span class="date">07.07</span></li>
+            <li><span class="name">Ляховський Артем</span> <span class="date">16.10</span></li>
+            <li><span class="name">Ляховська Вікторія</span> <span class="date">15.10</span></li>
+            <li><span class="name">Михайлишин Олександр</span> <span class="date">03.11</span></li>
+            <li><span class="name">Поляк Роман</span> <span class="date">30.09</span></li>
+            <li><span class="name">Стандричук Анна</span> <span class="date">30.03</span></li>
+            <li><span class="name">Філяс Анжеліка</span> <span class="date">02.10</span></li>
+            <li><span class="name">Чикирка Данило</span> <span class="date">05.09</span></li>
+            <li><span class="name">Шушняк Вікторія</span> <span class="date">28.12</span></li>
         </ul>
-</body>
-<footer>
+    </section>
+
+    <footer>
         <p>&copy; 2016-2024, Всі права захищені Поляком.</p>
-</footer>
+    </footer>
+</body>
 </html>
