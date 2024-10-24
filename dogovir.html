@@ -4,52 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Договори</title>
-    <link rel="stylesheet" href="mates.css"> 
-</head>
-<body>
-    <h1>Договори</h1>
-    <ul>
-      <li>Фашистсько-Гадянський договір</li>
-      <li>Хлібний договір</li>
-      <li>Союз</li>
-    </ul>
-</body>
-<footer>
-        <p>&copy; 2016-2024, Всі права захищені Поляком.</p>
-</footer>
-</html>
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список Однокласників</title>
-    <!-- Підключаємо Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="mates.css"> 
+    <style>
+        /* Загальні стилі */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 20px;
+        }
+
+        header h1 {
+            color: #374785;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contracts-section {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .contracts-list {
+            list-style: none;
+        }
+
+        .contracts-list li {
+            font-size: 1.2rem;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contracts-list li:last-child {
+            border-bottom: none;
+        }
+
+        .contract-name {
+            font-weight: 700;
+            color: #4a6fa5;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Мій Клас</h1>
+        <h1>Договори</h1>
     </header>
-    <section class="classmates-section">
-        <ul class="classmates-list">
-            <li><span class="name">Бень Віталій</span> - <span class="nickname">Страус</span></li>
-            <li><span class="name">Биков Владислав</span> - <span class="nickname">Мєдний бик</span></li>
-            <li><span class="name">Боднар Софія</span> - <span class="nickname">Радіація</span></li>
-            <li><span class="name">Гаврилко Діана</span> - <span class="nickname">Пані Діана</span></li>
-            <li><span class="name">Замойський Владислав</span> - <span class="nickname">Риба</span></li>
-            <li><span class="name">Лободєдова Альбіна</span> - <span class="nickname">Місс Крінж 2к17</span></li>
-            <li><span class="name">Ляховський Артем</span> - <span class="nickname">Мега Піг</span></li>
-            <li><span class="name">Ляховська Вікторія</span> - <span class="nickname">Кармеліта</span></li>
-            <li><span class="name">Михайлишин Олександр</span> - <span class="nickname">Ішак</span></li>
-            <li><span class="name">Поляк Роман</span> - <span class="nickname">Поле</span></li>
-            <li><span class="name">Стандричук Анна</span> - <span class="nickname">Пес Патрон</span></li>
-            <li><span class="name">Філяс Анжеліка</span> - <span class="nickname">Ангіна</span></li>
-            <li><span class="name">Чикирка Данило</span> - <span class="nickname">Лошадь</span></li>
-            <li><span class="name">Шушняк Вікторія</span> - <span class="nickname">Шершень</span></li>
+
+    <section class="contracts-section">
+        <ul class="contracts-list">
+            <li><span class="contract-name">Фашистсько-Гадянський договір</span></li>
+            <li><span class="contract-name">Хлібний договір</span></li>
+            <li><span class="contract-name">Союз</span></li>
         </ul>
     </section>
+
     <footer>
         <p>&copy; 2016-2024, Всі права захищені Поляком.</p>
     </footer>
