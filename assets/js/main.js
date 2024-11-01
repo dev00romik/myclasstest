@@ -57,3 +57,33 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+
+
+const settingsButton = document.getElementById('settings-button');
+const settingsModal = document.getElementById('settings-modal');
+const closeModal = document.getElementById('close-modal');
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+// Відкрити модальне вікно при натисканні на кнопку налаштувань
+settingsButton.addEventListener('click', () => {
+  settingsModal.style.display = 'flex';
+});
+
+// Закрити модальне вікно при натисканні на іконку закриття
+closeModal.addEventListener('click', () => {
+  settingsModal.style.display = 'none';
+});
+
+// Закрити модальне вікно при натисканні поза ним
+window.addEventListener('click', (event) => {
+  if (event.target === settingsModal) {
+    settingsModal.style.display = 'none';
+  }
+});
+
+// Керування перемиканням теми
+darkModeToggle.addEventListener('change', () => {
+  document.body.classList.toggle('dark-theme');
+  localStorage.setItem('selected-theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+});
