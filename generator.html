@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор 16-значных кодов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            text-align: left;
+            margin: 0 auto;
+            white-space: pre-line;
+            font-size: 16px;
+            color: #333;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 300px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Генератор 16-значных кодов</h1>
+    <button onclick="generateCodes()">Сгенерировать коды</button>
+    <div id="output"></div>
+    <script>
+        function generateCodes() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < 50; i++) { // Генерация 50 кодов
+                let code = '';
+                for (let j = 0; j < 16; j++) {
+                    code += chars.charAt(Math.floor(Math.random() * chars.length));
+                    if ((j + 1) % 4 === 0 && j < 15) code += '-';
+                }
+                result += code + '\n'; // Каждый код на новой строке
+            }
+            document.getElementById('output').textContent = result;
+        }
+    </script>
+</body>
+</html>
