@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Генератор 16-значных кодов</title>
+    <title>Vbucks code generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,52 +16,111 @@
         h1 {
             color: #333;
         }
-        button {
+        a {
+            display: inline-block;
+            margin: 20px 0;
             padding: 10px 20px;
             font-size: 16px;
+            text-decoration: none;
             background-color: #007BFF;
             color: white;
-            border: none;
             border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 20px;
         }
-        button:hover {
+        a:hover {
             background-color: #0056b3;
         }
-        #output {
-            text-align: left;
-            margin: 0 auto;
-            white-space: pre-line;
-            font-size: 16px;
-            color: #333;
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 500px;
             background-color: #fff;
-            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            max-width: 300px;
-            overflow-y: auto;
-            max-height: 400px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        .copy-btn {
+            font-size: 20px;
+            color: #28a745;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0;
+        }
+        .copy-btn:hover {
+            color: #218838;
         }
     </style>
 </head>
 <body>
-    <h1>Генератор 16-значных кодов</h1>
-    <button onclick="generateCodes()">Сгенерировать коды</button>
-    <div id="output"></div>
+    <h1>Vbucks code generator</h1>
+    <a href="#" onclick="generateCodes()">Generate</a>
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Code</th>
+                <th>Copy</th>
+            </tr>
+        </thead>
+        <tbody id="output"></tbody>
+    </table>
     <script>
         function generateCodes() {
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            let result = '';
+            let tbody = document.getElementById('output');
+            tbody.innerHTML = ''; // Очистить таблицу перед генерацией
+
             for (let i = 0; i < 50; i++) { // Генерация 50 кодов
                 let code = '';
                 for (let j = 0; j < 16; j++) {
                     code += chars.charAt(Math.floor(Math.random() * chars.length));
                     if ((j + 1) % 4 === 0 && j < 15) code += '-';
                 }
-                result += code + '\n'; // Каждый код на новой строке
+
+                // Создаем строку таблицы
+                let row = document.createElement('tr');
+
+                // Ячейка с номером
+                let numCell = document.createElement('td');
+                numCell.textContent = i + 1;
+                row.appendChild(numCell);
+
+                // Ячейка с кодом
+                let codeCell = document.createElement('td');
+                codeCell.textContent = code;
+                row.appendChild(codeCell);
+
+                // Ячейка с кнопкой копирования
+                let actionCell = document.createElement('td');
+                let copyButton = document.createElement('button');
+                copyButton.className = 'copy-btn';
+                copyButton.innerHTML = '<i class="ri-file-copy-line"></i>'; // Иконка из Remix Icons
+                copyButton.onclick = function() {
+                    copyToClipboard(code);
+                };
+                actionCell.appendChild(copyButton);
+                row.appendChild(actionCell);
+
+                // Добавляем строку в таблицу
+                tbody.appendChild(row);
             }
-            document.getElementById('output').textContent = result;
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Код скопирован: ' + text);
+            }).catch(err => {
+                alert('Ошибка при копировании: ' + err);
+            });
         }
     </script>
 </body>
