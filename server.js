@@ -9,9 +9,6 @@ app.use(express.static('public'));
 app.use(express.static('.'));
 import { Pool } from 'pg';
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
 // Підключення до бази даних
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
