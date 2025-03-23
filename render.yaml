@@ -1,7 +1,7 @@
 services:
   - name: my-website
     type: web
-    buildCommand: npm install
+    buildCommand: npm install, npm install express pg
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
