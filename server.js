@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import { Pool } from 'pg';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -7,7 +8,6 @@ const PORT = process.env.PORT || 3000;
 // Показуємо статичні файли
 app.use(express.static('public'));
 app.use(express.static('.'));
-import { Pool } from 'pg';
 
 // Підключення до бази даних
 const pool = new Pool({
