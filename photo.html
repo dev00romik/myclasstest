@@ -205,11 +205,11 @@
     <section id="videoSection">
       <h2>Відео</h2>
       <div class="gallery" id="videoGallery">
-        <video class="gallery-video" data-type="video" data-src="img/1.mp4" poster="img/1.mp4"></video>
-        <video class="gallery-video" data-type="video" data-src="img/2.mp4" poster="img/2.mp4"></video>
-                <video class="gallery-video" data-type="video" data-src="img/3.mp4" poster="img/3.mp4"></video>
-        <video class="gallery-video" data-type="video" data-src="img/4.mp4" poster="img/4.mp4"></video>
-        <video class="gallery-video" data-type="video" data-src="img/5.mp4" poster="img/5.mp4"></video>
+        <script>
+  for (let i = 1; i <= 75; i++) {
+    document.write(`<img src="img/${i}.mp4" alt="Відео ${i}" class="gallery-item" data-type="video">`);
+  }
+</script>
       </div>
     </section>
   </main>
