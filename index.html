@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Remixicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
-  
+
   <!-- Основний CSS -->
   <link rel="stylesheet" href="assets/css/styles.css" />
-  
+
   <title>Ваш заголовок</title>
-  
+
   <style>
     /*=============== SOCIAL SIDEBAR ===============*/
     .social-sidebar {
@@ -101,6 +101,52 @@
       height: 3px;
       background-color: var(--first-color);
     }
+    
+    /*=============== DROPDOWN LANGUAGE MENU ===============*/
+    .language-dropdown {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+    }
+    
+    .language-dropdown .dropdown-arrow {
+      transition: transform 0.3s ease;
+    }
+    
+    .language-options {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--body-color);
+      box-shadow: 0 4px 16px var(--shadow-color);
+      border-radius: 0.5rem;
+      list-style: none;
+      padding: 0.5rem 0;
+      margin: 0.5rem 0 0 0;
+      z-index: 100;
+      width: 150px;
+    }
+    
+    .language-options li {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .language-options li:hover {
+      background-color: var(--container-color);
+    }
+    
+    .language-dropdown.open .language-options {
+      display: block;
+    }
+    
+    .language-dropdown.open .dropdown-arrow {
+      transform: rotate(180deg);
+    }
   </style>
 </head>
 
@@ -124,53 +170,60 @@
       <div class="sidebar__user"></div>
       <div class="sidebar__content">
         <div>
-          <h3 class="sidebar__title">ГОЛОВНА</h3>
+          <h3 class="sidebar__title" data-key="main">ГОЛОВНА</h3>
           <div class="sidebar__list">
             <a href="./classmates.html" class="sidebar__link active-link">
               <i class="ri-user-fill"></i>
-              <span>Клас</span>
+              <span data-key="class">Клас</span>
             </a>
             <a href="./dn.html" class="sidebar__link">
               <i class="ri-cake-2-fill"></i>
-              <span>Народження</span>
+              <span data-key="birthdays">Народження</span>
             </a>
             <a href="./photo.html" class="sidebar__link">
               <i class="ri-image-2-line"></i>
-              <span>Спогади</span>
+              <span data-key="memories">Спогади</span>
             </a>
             <a href="./info.html" class="sidebar__link">
               <i class="ri-information-line"></i>
-              <span>Цитата</span>
+              <span data-key="quote">Цитата</span>
             </a>
             <a href="./podia.html" class="sidebar__link">
               <i class="ri-calendar-event-line"></i>
-              <span>Події</span>
+              <span data-key="events">Події</span>
             </a>
           </div>
         </div>
         <div>
-          <h3 class="sidebar__title">НАЛАШТУВАННЯ</h3>
+          <h3 class="sidebar__title" data-key="settings">НАЛАШТУВАННЯ</h3>
           <div class="sidebar__list">
-            <a href="./4044.html" class="sidebar__link">
-              <i class="ri-loader-2-line"></i>
-              <span>...</span>
-            </a>
-            <a href="../4044.html" class="sidebar__link">
-              <i class="ri-loader-2-line"></i>
-              <span>...</span>
+            <!-- Випадаюче меню для вибору мови -->
+        <button>
+          <i class="ri-moon-clear-fill sidebar__link sidebar__theme" id="theme-button">
+            <span data-key="theme">Тема</span>
+          </i>
+        </button>
+            <!-- Інший placeholder, якщо потрібен -->
+                        <a class="sidebar__link language-dropdown">
+              <i class="ri-global-line"></i>
+              <span data-key="language">Мова</span>
+              <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+              <ul class="language-options">
+                <li onclick="setLanguage('uk')">Українська</li>
+                <li onclick="setLanguage('en')">English</li>
+              </ul>
             </a>
             <div class="sidebar__actions">
-              <button>
-                <i class="ri-moon-clear-fill sidebar__link sidebar__theme" id="theme-button">
-                  <span>Тема</span>
-                </i>
-              </button>
+<a href="./4044.html" class="sidebar__link">
+  <i class="ri-loader-2-line"></i>
+  <span>...</span>
+</a>
             </div>
           </div>
         </div>
         <button class="sidebar__link" id="social-sidebar-toggle">
           <i class="ri-share-line"></i>
-          <span>Соціальні мережі</span>
+          <span data-key="social">Соціальні мережі</span>
         </button>
       </div>
     </div>
@@ -184,7 +237,7 @@
       <span></span>
     </button>
     <div class="social-sidebar__content">
-      <h3 class="social-sidebar__title">Соціальні мережі</h3>
+      <h3 class="social-sidebar__title" data-key="social">Соціальні мережі</h3>
       <ul class="social-sidebar__list">
         <li><a href="https://www.instagram.com/souiz_9.b" target="_blank" class="social-sidebar__link"><i class="ri-instagram-line"></i><span>Instagram</span></a></li>
         <li><a href="https://tiktok.com" target="_blank" class="social-sidebar__link"><i class="ri-tiktok-line"></i><span>TikTok</span></a></li>
@@ -220,6 +273,7 @@
   <!--=============== MAIN JS ===============-->
   <script src="assets/js/main.js"></script>
   <script>
+    // Соціальний сайдбар
     const socialSidebarToggleMain = document.getElementById('social-sidebar-toggle');
     const socialSidebar = document.getElementById('social-sidebar');
     const socialSidebarToggleHandle = document.getElementById('social-sidebar-toggle-handle');
@@ -245,6 +299,58 @@
         socialSidebar.classList.remove('show-social-sidebar');
       }
     });
+    
+    // Переклади
+    const translations = {
+      uk: {
+        main: "ГОЛОВНА",
+        class: "Клас",
+        birthdays: "Народження",
+        memories: "Спогади",
+        quote: "Цитата",
+        events: "Події",
+        settings: "Налаштування",
+        theme: "Тема",
+        social: "Соціальні мережі",
+        language: "Мова"
+      },
+      en: {
+        main: "MAIN",
+        class: "Class",
+        birthdays: "Birthdays",
+        memories: "Memories",
+        quote: "Quote",
+        events: "Events",
+        settings: "Settings",
+        theme: "Theme",
+        social: "Social Media",
+        language: "Language"
+      }
+    };
+    
+    let currentLang = "uk";
+    
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll("[data-key]").forEach((el) => {
+        const key = el.getAttribute("data-key");
+        el.textContent = translations[currentLang][key];
+      });
+    }
+    
+    // Обробка випадаючого меню для вибору мови
+    const languageDropdown = document.querySelector(".language-dropdown");
+    languageDropdown.addEventListener("click", (e) => {
+      e.stopPropagation();
+      languageDropdown.classList.toggle("open");
+    });
+    
+    document.addEventListener("click", () => {
+      languageDropdown.classList.remove("open");
+    });
+    
+    // Початкове встановлення мови
+    setLanguage(currentLang);
   </script>
 </body>
 
