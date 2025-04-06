@@ -14,7 +14,7 @@
   <title>Ваш заголовок</title>
   
   <style>
-    /*=============== SOCIAL SIDEBAR (у стилі головного sidebar) ===============*/
+    /*=============== SOCIAL SIDEBAR ===============*/
     .social-sidebar {
       position: fixed;
       top: 0;
@@ -39,6 +39,8 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+      overflow-y: auto;
+      padding-right: 1rem;
     }
     
     .social-sidebar__title {
@@ -52,7 +54,7 @@
     .social-sidebar__list {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 0 0 2rem 0;
       display: flex;
       flex-direction: column;
       row-gap: 1.5rem;
@@ -77,7 +79,6 @@
       color: var(--first-color);
     }
     
-    /* Хендл (три смужки) */
     .social-sidebar__toggle {
       position: absolute;
       left: -50px;
@@ -167,7 +168,6 @@
             </div>
           </div>
         </div>
-        <!-- Кнопка для відкриття соцмереж -->
         <button class="sidebar__link" id="social-sidebar-toggle">
           <i class="ri-share-line"></i>
           <span>Соціальні мережі</span>
@@ -176,7 +176,7 @@
     </div>
   </nav>
   
-  <!--=============== ПРАВИЙ Social Media SIDEBAR ===============-->
+  <!--=============== ПРАВИЙ Social Media SIDEBAR (з акаунтами) ===============-->
   <nav class="social-sidebar" id="social-sidebar">
     <button class="social-sidebar__toggle" id="social-sidebar-toggle-handle">
       <span></span>
@@ -186,30 +186,28 @@
     <div class="social-sidebar__content">
       <h3 class="social-sidebar__title">Соціальні мережі</h3>
       <ul class="social-sidebar__list">
-        <li>
-          <a href="https://www.instagram.com/souiz_9.b?igsh=MTBnaDVsNW1keGExbg==" target="_blank" class="social-sidebar__link">
-            <i class="ri-instagram-line"></i>
-            <span>Instagram</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://tiktok.com" target="_blank" class="social-sidebar__link">
-            <i class="ri-tiktok-line"></i>
-            <span>TikTok</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://onlyfans.com" target="_blank" class="social-sidebar__link">
-            <i class="ri-star-line"></i>
-            <span>OnlyFans</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com" target="_blank" class="social-sidebar__link">
-            <i class="ri-twitter-line"></i>
-            <span>Twitter</span>
-          </a>
-        </li>
+        <li><a href="https://www.instagram.com/souiz_9.b" target="_blank" class="social-sidebar__link"><i class="ri-instagram-line"></i><span>Instagram</span></a></li>
+        <li><a href="https://tiktok.com" target="_blank" class="social-sidebar__link"><i class="ri-tiktok-line"></i><span>TikTok</span></a></li>
+        <li><a href="https://twitter.com" target="_blank" class="social-sidebar__link"><i class="ri-twitter-line"></i><span>Twitter</span></a></li>
+      </ul>
+      
+      <h3 class="social-sidebar__title">Instagram</h3>
+      <ul class="social-sidebar__list">
+        <li><a href="https://instagram.com/person1" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Роман П.</span></a></li>
+        <li><a href="https://instagram.com/person2" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Данило Ч.</span></a></li>
+        <li><a href="https://instagram.com/person3" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Вікторія Л.</span></a></li>
+        <li><a href="https://instagram.com/person4" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Аня С.</span></a></li>
+        <li><a href="https://instagram.com/person5" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Анжеліка Ф.</span></a></li>
+        <li><a href="https://instagram.com/person6" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Софія Б.</span></a></li>
+        <li><a href="https://instagram.com/person7" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Олександр М.</span></a></li>
+        <li><a href="https://instagram.com/person8" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Артем Л.</span></a></li>
+        <li><a href="https://instagram.com/person9" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Влад З.</span></a></li>
+        <li><a href="https://instagram.com/person10" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Влад Б.</span></a></li>
+        <li><a href="https://instagram.com/person11" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Настя С.</span></a></li>
+        <li><a href="https://instagram.com/person12" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Альбіна Л.</span></a></li>
+        <li><a href="https://instagram.com/person13" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Віталій Б.</span></a></li>
+        <li><a href="https://instagram.com/person14" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Діана Г.</span></a></li>
+        <li><a href="https://instagram.com/person15" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Вікторія Ш.</span></a></li>
       </ul>
     </div>
   </nav>
@@ -232,29 +230,22 @@
     
     socialSidebarToggleHandle.addEventListener('click', () => {
       socialSidebar.classList.toggle('show-social-sidebar');
-      
     });
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  // Відслідковуємо дотик
-  socialSidebar.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-
-  // Коли дотик завершується — перевіряємо напрям
-  socialSidebar.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleGesture();
-  });
-
-  function handleGesture() {
-    // Якщо свайп вправо і довжина > 50px — закриваємо
-    if (touchEndX - touchStartX > 50) {
-      socialSidebar.classList.remove('show-social-sidebar');
-    }
-  }
-</script>
+    
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    socialSidebar.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    socialSidebar.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX - touchStartX > 50) {
+        socialSidebar.classList.remove('show-social-sidebar');
+      }
+    });
+  </script>
 </body>
 
 </html>
