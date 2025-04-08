@@ -581,7 +581,6 @@ body.dark-theme {
   display: block;
   background-color: var(--container-color);
 }
-}
 
 .instagram-toggle.active .arrow-icon {
   transform: rotate(180deg);
