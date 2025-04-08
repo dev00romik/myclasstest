@@ -536,3 +536,53 @@ body.dark-theme {
     .language-dropdown.open .dropdown-arrow {
       transform: rotate(180deg);
     }
+
+
+.social-section {
+  margin-top: 0.1rem;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.social-item i {
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
+}
+
+.social-item span {
+  flex: 1;
+  margin-left: 1.1rem;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+  margin-right: 5.5rem;
+}
+
+.instagram-list {
+  list-style: none;
+  padding-left: 0.1rem;
+  margin: 0.5rem 1;
+  display: none;
+}
+
+.instagram-list li {
+  margin: 0.3rem 0;
+}
+
+.instagram-toggle.active+.instagram-list {
+  display: block;
+  background-color: var(--container-color);
+}
+}
+
+.instagram-toggle.active .arrow-icon {
+  transform: rotate(180deg);
+}
