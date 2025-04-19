@@ -1,38 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="preload.css">
-    <title>Хлів</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Remixicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
+
+  <!-- Основний CSS (окремий файл) -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <title>Хлів</title>
 </head>
-
 <body>
-    <div class="loader">
-        <div class="ball moving"></div>
-        <div class="balls">
-            <div class="ball"></div>
-            <div class="ball"></div>
-            <div class="ball"></div>
-            <div class="ball"></div>
-            <div class="ball moving"></div>
-        </div>
+  <!--=============== HEADER ===============-->
+  <header class="header" id="header">
+    <div class="header__container">
+      <a href="#" class="header__logo">
+        <i class="ri-loader-2-line"></i>
+        <span>Loading</span>
+      </a>
+      <button class="header__toggle" id="header-toggle">
+        <i class="ri-menu-line"></i>
+      </button>
     </div>
+  </header>
+  
+  <!--=============== ЛІВИЙ SIDEBAR ===============-->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar__container">
+      <div class="sidebar__user"></div>
+      <div class="sidebar__content">
+        <div>
+          <h3 class="sidebar__title" data-key="main">ГОЛОВНА</h3>
+          <div class="sidebar__list">
+            <a href="./classmates.html" class="sidebar__link active-link">
+              <i class="ri-user-fill"></i>
+              <span data-key="class">Клас</span>
+            </a>
+            <a href="./dn.html" class="sidebar__link">
+              <i class="ri-cake-2-fill"></i>
+              <span data-key="birthdays">Народження</span>
+            </a>
+            <a href="./photo.html" class="sidebar__link">
+              <i class="ri-image-2-line"></i>
+              <span data-key="memories">Спогади</span>
+            </a>
+            <a href="./info.html" class="sidebar__link">
+              <i class="ri-information-line"></i>
+              <span data-key="quote">Цитата</span>
+            </a>
+            <a href="./podia.html" class="sidebar__link">
+              <i class="ri-calendar-event-line"></i>
+              <span data-key="events">Події</span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="sidebar__title" data-key="settings">НАЛАШТУВАННЯ</h3>
+          <div class="sidebar__list">
+            <!-- Перемикач теми -->
+            <button class="sidebar__link sidebar__theme" id="theme-button">
+              <i class="ri-moon-clear-fill"></i>
+              <span data-key="theme">Тема</span>
+            </button>
+            <!-- Випадаюче меню для вибору мови -->
+            <div class="sidebar__link language-dropdown">
+              <i class="ri-global-line"></i>
+              <span data-key="language">Мова</span>
+              <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+              <ul class="language-options">
+                <li onclick="setLanguage('uk')">Українська</li>
+                <li onclick="setLanguage('en')">English</li>
+              </ul>
+            </div>
+            <div class="sidebar__actions">
+              <a href="./4044.html" class="sidebar__link">
+                <i class="ri-loader-2-line"></i>
+                <span>...</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button class="sidebar__link" id="social-sidebar-toggle">
+          <i class="ri-share-line"></i>
+          <span data-key="social">Соціальні мережі</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!--=============== ПРАВИЙ Social Media SIDEBAR ===============-->
+  <nav class="social-sidebar" id="social-sidebar">
+    <button class="social-sidebar__toggle" id="social-sidebar-toggle-handle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="social-sidebar__content">
+      <h3 class="social-sidebar__title" data-key="social">Соціальні мережі</h3>
+      <ul class="social-sidebar__list">
+        <li>
+          <a href="https://www.instagram.com/souiz_9.b" target="_blank" class="social-sidebar__link">
+            <i class="ri-instagram-line"></i>
+            <span>souiz_9</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://tiktok.com" target="_blank" class="social-sidebar__link">
+            <i class="ri-tiktok-line"></i>
+            <span>TikTok</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com" target="_blank" class="social-sidebar__link">
+            <i class="ri-twitter-line"></i>
+            <span>Twitter</span>
+          </a>
+        </li>
+      </ul>
+      <div class="social-section">
+  <div class="social-item instagram-toggle">
+    <i class="ri-instagram-line"></i>
+    <span>Instagram</span>
+    <i class="ri-arrow-down-s-line arrow-icon"></i>
+  </div>
+  <ul class="instagram-list">
+    <li><a href="https://www.instagram.com/polyskui_0001?igsh=ZGZ3NGdjM2EwM2hm&utm_source=qr" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Роман П.</span></a></li>
+    <li><a href="https://www.instagram.com/lilxneymar?igsh=MWV4MDJnMHZ0YWpsNQ%3D%3D&utm_source=qr" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Данило Ч.</span></a></li>
+    <li><a href="https://www.instagram.com/vikalyahovska?igsh=MTE2NzZmZXI3b3l5aQ==" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Вікторія Л.</span></a></li>
+    <li><a href="https://instagram.com/ann_st._" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Аня С.</span></a></li>
+    <li><a href="https://www.instagram.com/anzhelikafilias?igsh=Zjd2aGZkdGhkNGtv" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Анжеліка Ф.</span></a></li>
+    <li><a href="https://www.instagram.com/sofa_23452?igsh=MWlqN3BsMjB2N2hyMg==" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Софія Б.</span></a></li>
+    <li><a href="https://www.instagram.com/flink_west?igsh=eGgwdWpzcm91aThy" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Олександр М.</span></a></li>
+    <li><a href="https://www.instagram.com/artem.4ik999?igsh=MWM5ZHUxYXF0Z3J3cg==" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Артем Л.</span></a></li>
+    <li><a href="https://instagram.com/" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Влад З.</span></a></li>
+    <li><a href="https://www.instagram.com/eveenrise?igsh=MTZzY3VveDRta3pqNw==https://www.instagram.com/eveenrise?igsh=MTZzY3VveDRta3pqNw==" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Влад Б.</span></a></li>
+    <li><a href="https://www.instagram.com/asua784?igsh=MWN4dnZieGw5dmE5cg==" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Настя С.</span></a></li>
+    <li><a href="https://www.instagram.com/albin.a2742?igsh=MWtsMDlwZjN1ZnliZQ==" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Альбіна Л.</span></a></li>
+    <li><a href="https://www.instagram.com/vitalii14920?igsh=ZDdqb2h1c2kxcnF3" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Віталій Б.</span></a></li>
+    <li><a href="https://www.instagram.com/gavrulkodiana?igsh=NzQzZWVpZzNuZnN6" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Діана Г.</span></a></li>
+    <li><a href="https://www.instagram.com/ethereal.viki?igsh=YXRqcjd6Z3U2c2pw" target="_blank" class="social-sidebar__link"><i class="ri-user-line"></i><span>Вікторія Ш.</span></a></li>
+  </ul>
+</div>
+    </div>
+  </nav>
+  
+  <!--=============== MAIN ===============-->
+  <main class="main container" id="main">
+    <h1>...</h1>
+  </main>
+  
+  <!--=============== MAIN JS ===============-->
+  <script>
+    // Перемикач головного сайдбару
+    const headerToggle = document.getElementById('header-toggle');
+    const sidebar = document.getElementById('sidebar');
+    headerToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('show-sidebar');
+    });
 
-    <svg>
-        <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-        </filter>
-    </svg>
-      <script>
-      // Переходить на головну сторінку через 3 секунди
-      setTimeout(() => {
-          window.location.href = "main.html"; // змінити на свою головну сторінку
-      }, 3000);
+    // Соціальний сайдбар
+    const socialSidebarToggleMain = document.getElementById('social-sidebar-toggle');
+    const socialSidebar = document.getElementById('social-sidebar');
+    const socialSidebarToggleHandle = document.getElementById('social-sidebar-toggle-handle');
+
+    socialSidebarToggleMain.addEventListener('click', () => {
+      socialSidebar.classList.toggle('show-social-sidebar');
+    });
+
+    socialSidebarToggleHandle.addEventListener('click', () => {
+      socialSidebar.classList.toggle('show-social-sidebar');
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    socialSidebar.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    socialSidebar.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX - touchStartX > 50) {
+        socialSidebar.classList.remove('show-social-sidebar');
+      }
+    });
+
+    // Переклади
+    const translations = {
+      uk: {
+        main: "ГОЛОВНА",
+        class: "Клас",
+        birthdays: "Народження",
+        memories: "Спогади",
+        quote: "Цитата",
+        events: "Події",
+        settings: "Налаштування",
+        theme: "Тема",
+        social: "Соціальні мережі",
+        language: "Мова"
+      },
+      en: {
+        main: "MAIN",
+        class: "Class",
+        birthdays: "Birthdays",
+        memories: "Memories",
+        quote: "Quote",
+        events: "Events",
+        settings: "Settings",
+        theme: "Theme",
+        social: "Social Media",
+        language: "Language"
+      }
+    };
+
+    // Відновлення вибору мови і теми з localStorage
+    let currentLang = localStorage.getItem('language') || 'uk';
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    document.body.classList.toggle('dark-theme', currentTheme === 'dark');
+    
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('language', lang);  // Зберігаємо мову в localStorage
+      document.querySelectorAll("[data-key]").forEach((el) => {
+        const key = el.getAttribute("data-key");
+        el.textContent = translations[currentLang][key];
+      });
+    }
+
+    // Початкове встановлення мови
+    setLanguage(currentLang);
+
+    // Обробка випадаючого меню для вибору мови
+    const languageDropdown = document.querySelector(".language-dropdown");
+    languageDropdown.addEventListener("click", (e) => {
+      e.stopPropagation();
+      languageDropdown.classList.toggle("open");
+    });
+
+    document.addEventListener("click", () => {
+      languageDropdown.classList.remove("open");
+    });
+
+    // Перемикач теми
+    const themeButton = document.getElementById('theme-button');
+    themeButton.addEventListener('click', () => {
+      const newTheme = document.body.classList.contains('dark-theme') ? 'light' : 'dark';
+      document.body.classList.toggle('dark-theme');
+      localStorage.setItem('theme', newTheme);  // Зберігаємо тему в localStorage
+    });
+
+    // Випадаючий список Instagram
+    document.querySelector('.instagram-toggle').addEventListener('click', function() {
+      this.classList.toggle('active');
+    });
   </script>
+  <script src="assets/js/main.js"></script>
 </body>
-
 </html>
