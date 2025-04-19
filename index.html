@@ -149,8 +149,16 @@
   </nav>
   
   <!--=============== MAIN ===============-->
-  <main class="main container" id="main">
-    <h1>...</h1>
+   <main class="main container" id="main">
+    <section class="upcoming-birthdays">
+      <h3 class="birthdays-title" data-i18n="upcomingBirthdays">Найближчі дні народження</h3>
+      <!-- Лоадер -->
+      <div id="loading" class="loader">
+        <i class="ri-loader-2-line"></i>
+      </div>
+      <!-- Сюди вставляться 3 записи -->
+      <ul class="birthdays-list" id="birthdayList"></ul>
+    </section>
   </main>
   
   <!--=============== MAIN JS ===============-->
@@ -257,7 +265,68 @@
     document.querySelector('.instagram-toggle').addEventListener('click', function() {
       this.classList.toggle('active');
     });
-  </script>
+
+
+    document.addEventListener("DOMContentLoaded", async function() {
+      const birthdayContainer = document.getElementById("birthdayList");
+      const loading = document.getElementById("loading");
+      
+      try {
+        const response = await fetch("dn.html");
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        
+        // Знаходимо всі елементи з класом .day у dn.html
+        const dayElements = Array.from(doc.querySelectorAll(".day"));
+        
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const thisYear = today.getFullYear();
+        
+        // Парсимо дати формату "дд.мм" і виставляємо на поточний або наступний рік
+        const birthdays = dayElements
+          .map(item => {
+            const dateStr = item.dataset.date; // наприклад "12.11"
+            if (!dateStr) return null;
+            const [day, month] = dateStr.split(".");
+            const dateObj = new Date(thisYear, parseInt(month) - 1, parseInt(day));
+            if (dateObj < today) dateObj.setFullYear(thisYear + 1);
+            return { name: item.textContent.trim(), date: dateObj };
+          })
+          .filter(Boolean)
+          .sort((a, b) => a.date - b.date)
+          .slice(0, 3);
+        
+        // Відображаємо
+        birthdayContainer.innerHTML = "";
+        if (birthdays.length === 0) {
+          birthdayContainer.innerHTML = "<li class='birthday-item'>Немає днів народження</li>";
+        } else {
+          birthdays.forEach(item => {
+            const li = document.createElement("li");
+            li.className = "birthday-item";
+            const dateEl = document.createElement("div");
+            dateEl.className = "birthday-date";
+            dateEl.textContent = item.date.toLocaleDateString("uk-UA", {
+              day: "numeric",
+              month: "long"
+            });
+            const nameEl = document.createElement("div");
+            nameEl.className = "birthday-name";
+            nameEl.textContent = item.name;
+            li.append(dateEl, nameEl);
+            birthdayContainer.appendChild(li);
+          });
+        }
+      } catch (e) {
+        console.error("Помилка завантаження днів народження:", e);
+        birthdayContainer.innerHTML = "<li class='birthday-item'>Помилка завантаження</li>";
+      } finally {
+        if (loading) loading.style.display = "none";
+      }
+    });
+</script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

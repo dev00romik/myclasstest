@@ -585,3 +585,50 @@ body.dark-theme {
 .instagram-toggle.active .arrow-icon {
   transform: rotate(180deg);
 }
+.upcoming-birthdays {
+  background-color: var(--body-color);
+  box-shadow: 0 2px 24px var(--shadow-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 2rem 1.5rem;
+  transition: background-color .4s, color .4s;
+}
+
+.birthdays-title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  margin-bottom: 1rem;
+}
+
+.birthdays-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.birthday-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75rem 1rem;
+  border-radius: .75rem;
+  background-color: hsla(228, 24%, 90%, 0.2);
+  transition: background-color .3s;
+}
+
+.birthday-item:hover {
+  background-color: hsla(228, 85%, 63%, 0.1);
+}
+
+.birthday-date {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
+}
+
+.birthday-name {
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
