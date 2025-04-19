@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Дні народження</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200..1000&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" /> <!-- Підключення до CSS, який ти скинув -->
+  <!-- Ваш основний CSS з :root-змінними -->
+  <link rel="stylesheet" href="styles.css" />
+
   <style>
     body {
-      font-family: "Nunito Sans", sans-serif;
+      font-family: var(--body-font);
       background-color: var(--body-color);
       color: var(--text-color);
       margin: 0;
       padding: 0;
     }
-
     .main-content {
       display: flex;
       justify-content: center;
@@ -22,7 +25,6 @@
       min-height: 100vh;
       padding: 2rem;
     }
-
     .upcoming-birthdays {
       background-color: var(--body-color);
       box-shadow: 0 2px 24px var(--shadow-color);
@@ -31,47 +33,42 @@
       max-width: 500px;
       width: 100%;
     }
-
     .birthdays-title {
-      font-size: 1.5rem;
+      font-size: var(--normal-font-size);
       font-weight: var(--font-semi-bold);
       color: var(--title-color);
       text-align: center;
       margin-bottom: 2rem;
     }
-
-    .birthdays-list {
+    /* Нова секція для вашої списку */
+    .birthdays-item {
       list-style: none;
       padding: 0;
       margin: 0;
       display: grid;
       row-gap: 1rem;
     }
-
-    .birthday-item {
+    .birthdays-item .day {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
+      padding: .75rem 1rem;
       border-radius: .75rem;
       background-color: hsla(228, 24%, 90%, 0.2);
       transition: background-color .3s;
-    }
-
-    .birthday-item:hover {
-      background-color: hsla(228, 85%, 63%, 0.1);
-    }
-
-    .birthday-name {
       font-weight: var(--font-semi-bold);
       color: var(--title-color);
+      position: relative;
     }
-
-    .birthday-date {
+    .birthdays-item .day:hover {
+      background-color: hsla(228, 85%, 63%, 0.1);
+    }
+    /* Відображаємо дату справа */
+    .birthdays-item .day::after {
+      content: attr(data-date);
       font-size: var(--smaller-font-size);
       color: var(--text-color);
     }
-
     footer {
       text-align: center;
       margin-top: 2rem;
@@ -84,23 +81,23 @@
   <main class="main-content">
     <section class="upcoming-birthdays">
       <h2 class="birthdays-title">Дні народження</h2>
-    <ul class="birthdays-item">
-  <li class="day" data-date="12.11">Бень Віталій</li>
-  <li class="day" data-date="28.01">Биков Владислав</li>
-  <li class="day" data-date="17.01">Боднар Софія</li>
-  <li class="day" data-date="11.07">Гаврилко Діана</li>
-  <li class="day" data-date="27.06">Замойський Владислав</li>
-  <li class="day" data-date="07.07">Лободєдова Альбіна</li>
-  <li class="day" data-date="16.10">Ляховський Артем</li>
-  <li class="day" data-date="15.10">Ляховська Вікторія</li>
-  <li class="day" data-date="03.11">Михайлишин Олександр</li>
-  <li class="day" data-date="30.09">Поляк Роман</li>
-  <li class="day" data-date="30.03">Стандричук Анна</li>
-  <li class="day" data-date="24.09">Сенчина Анастасія</li>
-  <li class="day" data-date="02.10">Філяс Анжеліка</li>
-  <li class="day" data-date="05.09">Чикирка Данило</li>
-  <li class="day" data-date="28.12">Шушняк Вікторія</li>
-</ul>
+      <ul class="birthdays-item">
+        <li class="day" data-date="12.11">Бень Віталій</li>
+        <li class="day" data-date="28.01">Биков Владислав</li>
+        <li class="day" data-date="17.01">Боднар Софія</li>
+        <li class="day" data-date="11.07">Гаврилко Діана</li>
+        <li class="day" data-date="27.06">Замойський Владислав</li>
+        <li class="day" data-date="07.07">Лободєдова Альбіна</li>
+        <li class="day" data-date="16.10">Ляховський Артем</li>
+        <li class="day" data-date="15.10">Ляховська Вікторія</li>
+        <li class="day" data-date="03.11">Михайлишин Олександр</li>
+        <li class="day" data-date="30.09">Поляк Роман</li>
+        <li class="day" data-date="30.03">Стандричук Анна</li>
+        <li class="day" data-date="24.09">Сенчина Анастасія</li>
+        <li class="day" data-date="02.10">Філяс Анжеліка</li>
+        <li class="day" data-date="05.09">Чикирка Данило</li>
+        <li class="day" data-date="28.12">Шушняк Вікторія</li>
+      </ul>
       <footer>
         <p>&copy; 2016–2024, Всі права захищені Поляком.</p>
       </footer>
