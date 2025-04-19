@@ -16,17 +16,29 @@
 </head>
 <body>
   <!--=============== HEADER ===============-->
-  <header class="header" id="header">
-    <div class="header__container">
-      <a href="#" class="header__logo">
-        <i class="ri-loader-2-line"></i>
-        <span>Loading</span>
-      </a>
-      <button class="header__toggle" id="header-toggle">
-        <i class="ri-menu-line"></i>
-      </button>
+ <header class="header" id="header">
+  <div class="header__container">
+    <a href="#" class="header__logo">
+      <i class="ri-loader-2-line"></i>
+      <span data-key="main1"></span>
+    </a>
+    
+    <!-- Вибір мови переміщено сюди -->
+    <div class="language-dropdown">
+      <i class="ri-global-line"></i>
+      <span data-key="language">Мова</span>
+      <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+      <ul class="language-options">
+        <li onclick="setLanguage('uk')">Українська</li>
+        <li onclick="setLanguage('en')">English</li>
+      </ul>
     </div>
-  </header>
+    
+    <button class="header__toggle" id="header-toggle">
+      <i class="ri-menu-line"></i>
+    </button>
+  </div>
+</header>
   
   <!--=============== ЛІВИЙ SIDEBAR ===============-->
   <nav class="sidebar" id="sidebar">
@@ -56,41 +68,20 @@
               <i class="ri-calendar-event-line"></i>
               <span data-key="events">Події</span>
             </a>
-          </div>
-        </div>
-        <div>
-          <h3 class="sidebar__title" data-key="settings">НАЛАШТУВАННЯ</h3>
-          <div class="sidebar__list">
-            <!-- Перемикач теми -->
-            <button class="sidebar__link sidebar__theme" id="theme-button">
-              <i class="ri-moon-clear-fill"></i>
-              <span data-key="theme">Тема</span>
-            </button>
-            <!-- Випадаюче меню для вибору мови -->
-            <div class="sidebar__link language-dropdown">
-              <i class="ri-global-line"></i>
-              <span data-key="language">Мова</span>
-              <i class="ri-arrow-down-s-line dropdown-arrow"></i>
-              <ul class="language-options">
-                <li onclick="setLanguage('uk')">Українська</li>
-                <li onclick="setLanguage('en')">English</li>
-              </ul>
-            </div>
-            <div class="sidebar__actions">
-              <a href="./4044.html" class="sidebar__link">
-                <i class="ri-loader-2-line"></i>
-                <span>...</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <button class="sidebar__link" id="social-sidebar-toggle">
+                    <button class="sidebar__link" id="social-sidebar-toggle">
           <i class="ri-share-line"></i>
           <span data-key="social">Соціальні мережі</span>
         </button>
+          </div>
+        </div>
+        
       </div>
-    </div>
-  </nav>
+                  <button class="sidebar__link sidebar__theme" id="theme-button">
+              <i class="ri-moon-clear-fill"></i>
+              <span data-key="theme">Тема</span>
+            </button>  
+            </div>
+  </nav
   
   <!--=============== ПРАВИЙ Social Media SIDEBAR ===============-->
   <nav class="social-sidebar" id="social-sidebar">
@@ -151,7 +142,7 @@
   <!--=============== MAIN ===============-->
    <main class="main container" id="main">
     <section class="upcoming-birthdays">
-      <h3 class="birthdays-title" data-i18n="upcomingBirthdays">Найближчі дні народження</h3>
+      <h3 class="birthdays-title" data-i18n="upcomingBirthdays" data-key="upb="></h3>
       <!-- Лоадер -->
       <div id="loading" class="loader">
         <i class="ri-loader-2-line"></i>
@@ -200,6 +191,8 @@
     // Переклади
     const translations = {
       uk: {
+        upb: "Найближчі дні народження",
+        main1: "Головна",
         main: "ГОЛОВНА",
         class: "Клас",
         birthdays: "Народження",
@@ -212,6 +205,8 @@
         language: "Мова"
       },
       en: {
+        upb: "Upcoming birthdays",
+        main1: "Main",
         main: "MAIN",
         class: "Class",
         birthdays: "Birthdays",
