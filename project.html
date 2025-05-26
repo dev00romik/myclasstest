@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Іван Пулюй — Презентація</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+body {
+font-family: 'Montserrat', sans-serif;
+background: linear-gradient(135deg, #1e1e2f, #2b2b45);
+color: #f8f9fa;
+overflow-x: hidden;
+margin: 0;
+padding: 0;
+}
+.slide {
+display: none;
+min-height: 100vh;
+padding: 50px 20px;
+align-items: center;
+justify-content: center;
+gap: 40px;
+}
+.slide.active {
+display: flex;
+flex-wrap: wrap;
+}
+.slide-content {
+background: rgba(0, 0, 0, 0.7);
+border-radius: 15px;
+box-shadow: 0 0 25px rgba(0,0,0,0.8);
+padding: 30px;
+flex: 1 1 500px;
+max-width: 600px;
+color: #eee;
+}
+.slide img {
+max-width: 400px;
+border-radius: 12px;
+box-shadow: 0 0 20px rgba(255,255,255,0.2);
+flex: 1 1 400px;
+object-fit: cover;
+}
+h1, h2 {
+color: #ffd369;
+margin-bottom: 20px;
+}
+p {
+line-height: 1.6;
+margin-bottom: 15px;
+font-size: 1.1rem;
+}
+.nav-buttons {
+position: fixed;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 10000;
+}
+.nav-buttons button {
+margin: 0 10px;
+min-width: 120px;
+font-weight: 600;
+}
+ul.sources {
+list-style: none;
+padding-left: 0;
+font-size: 1.2rem;
+}
+ul.sources li {
+margin: 10px 0;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+ul.sources li i {
+color: #ffd369;
+font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+.slide {
+flex-direction: column;
+padding: 30px 10px;
+}
+.slide-content, .slide img {
+max-width: 100%;
+flex: none;
+}
+.slide img {
+margin-bottom: 30px;
+}
+}
+</style>
+
+</head>
+<body>
+
+<!-- Slides container -->
+<div id="slides">
+
+  <!-- Slide 1 -->
+  <section class="slide active" id="slide0" data-aos="fade-in">
+    <div class="container text-center">
+      <h1>Презентація з історії України</h1>
+      <p class="lead">Учень 9-Б класу — <strong>Поляк Роман</strong></p>
+      <p><em>Тема: Іван Пулюй — геній української науки</em></p>
+    </div>
+  </section>
+
+  <!-- Slide 2 -->
+  <section class="slide container" id="slide1" data-aos="fade-right">
+    <img src="images/image1.jpg" alt="Іван Пулюй фото" />
+    <div class="slide-content">
+      <h2>Ранні роки і освіта</h2>
+      <p>Іван Пулюй народився 1845 року в селі Гадячка на Тернопільщині в сім’ї священника. Змалку виявив здібності до наук і техніки.</p>
+      <p>Навчався у Тернопільській гімназії, а згодом вступив до Віденського університету, де вивчав фізику і математику.</p>
+      <p>Під час навчання брав участь у наукових експериментах, активно цікавився електрикою та її застосуваннями.</p>
+      <p>Здобуті знання дозволили йому стати одним із піонерів в області рентгенології.</p>
+    </div>
+  </section>
+
+  <!-- Slide 3 -->
+  <section class="slide container" id="slide2" data-aos="fade-left">
+    <img src="images/image2.jpg" alt="Наукові дослідження" />
+    <div class="slide-content">
+      <h2>Наукова діяльність</h2>
+      <p>Пулюй проводив численні експерименти з електричними розрядами в газах, що стали основою для відкриття рентгенівських променів.</p>
+      <p>Він створив унікальний рентгенівський трубчатий апарат, за декілька місяців до відкриття Вільгельмом Рентгеном рентгенівських променів.</p>
+      <p>Його наукові праці отримали визнання у Європі, хоча в Україні він залишався відомим переважно у вузьких колах.</p>
+      <p>Пулюй працював над удосконаленням освітлення, телеграфії і теорією електромагнетизму.</p>
+    </div>
+  </section>
+
+  <!-- Slide 4 -->
+  <section class="slide container" id="slide3" data-aos="fade-right">
+    <img src="images/image3.jpg" alt="Внесок у науку" />
+    <div class="slide-content">
+      <h2>Внесок у розвиток науки</h2>
+      <p>Іван Пулюй був одним із перших, хто застосував рентгенівські промені у медицині.</p>
+      <p>Його роботи допомогли покращити методи діагностики внутрішніх травм і хвороб, врятувавши життя багатьом пацієнтам.</p>
+      <p>Він також відомий як перекладач Біблії українською мовою, що свідчить про широту його інтересів.</p>
+      <p>Пулюй активно підтримував українську культуру та науку, був членом багатьох наукових товариств.</p>
+    </div>
+  </section>
+
+  <!-- Slide 5 -->
+  <section class="slide container" id="slide4" data-aos="fade-left">
+    <img src="images/image4.jpg" alt="Публікації" />
+    <div class="slide-content">
+      <h2>Публікації і нагороди</h2>
+      <p>Він опублікував понад 50 наукових робіт у престижних європейських журналах, де виклав свої теорії і експерименти.</p>
+      <p>У 1903 році отримав золоту медаль Віденської Академії наук за відкриття в області фізики.</p>
+      <p>Нагороджений численними дипломами і грамотами за внесок у розвиток науки і освіти.</p>
+      <p>Пулюй залишається в пам’яті як один із найвизначніших українських вчених кінця XIX — початку XX століття.</p>
+    </div>
+  </section>
+
+  <!-- Slide 6 -->
+  <section class="slide container" id="slide5" data-aos="fade-right">
+    <img src="images/image5.jpg" alt="Іван Пулюй і рентген" />
+    <div class="slide-content">
+      <h2>Рентгенівські промені</h2>
+      <p>Хоча Вільгельм Рентген офіційно відкрив рентгенівські промені у 1895 році, Пулюй проводив подібні дослідження раніше.</p>
+      <p>Він зумів створити апаратуру, що дозволяла отримувати знімки внутрішніх органів, але через низку обставин його відкриття не отримали належного визнання.</p>
+      <p>Наукове співтовариство визнає, що Пулюй був піонером у цій галузі.</p>
+      <p>Його внесок у розвиток рентгенології сьогодні активно досліджують історики науки.</p>
+    </div>
+  </section>
+
+  <!-- Slide 7 -->
+  <section class="slide container" id="slide6" data-aos="fade-left">
+    <img src="images/image6.jpg" alt="Викладацька діяльність" />
+    <div class="slide-content">
+      <h2>Викладацька діяльність</h2>
+      <p>Іван Пулюй викладав у Віденському університеті, де був шанованим професором фізики.</p>
+      <p>Він передавав свої знання студентам, надихаючи нове покоління науковців.</p>
+      <p>Пулюй розробив кілька навчальних курсів і підручників, які використовувалися у європейських університетах.</p>
+      <p>Його підхід до викладання поєднував практичні експерименти з теоретичними знаннями.</p>
+    </div>
+  </section>
+
+  <!-- Slide 8 -->
+  <section class="slide container" id="slide7" data-aos="fade-right">
+    <img src="images/image7.jpg" alt="Переклади" />
+    <div class="slide-content">
+      <h2>Переклади і культурний внесок</h2>
+      <p>Пулюй не лише науковець, а й культурний діяч, відомий перекладач української Біблії.</p>
+      <p>Він прагнув зробити релігійні тексти доступними українською мовою для широкого кола читачів.</p>
+      <p>Його переклади відзначалися точністю і глибоким розумінням оригіналу.</p>
+      <p>Цей внесок сприяв розвитку української мови і культури у важкий період історії.</p>
+    </div>
+  </section>
+
+  <!-- Slide 9 -->
+  <section class="slide container" id="slide8" data-aos="fade-left">
+    <img src="images/image8.jpg" alt="Наукове товариство" />
+    <div class="slide-content">
+      <h2>Членство у наукових товариствах</h2>
+      <p>Пулюй був активним учасником багатьох європейських наукових товариств.</p>
+      <p>Це дозволяло йому обмінюватись знаннями, ідеями та останніми відкриттями зі світовими колегами.</p>
+      <p>Його ім’я згадується в історії кількох провідних наукових журналів кінця XIX століття.</p>
+      <p>Пулюй підтримував українських науковців і сприяв їхньому розвитку.</p>
+    </div>
+  </section>
+
+  <!-- Slide 10 -->
+  <section class="slide container" id="slide9" data-aos="fade-right">
+    <img src="images/image9.jpg" alt="Вшанування пам’яті" />
+    <div class="slide-content">
+      <h2>Вшанування пам’яті</h2>
+      <p>Іван Пулюй помер 1918 року, залишивши великий спадок у науці і культурі.</p>
+      <p>У багатьох містах України встановлені пам’ятники та названі вулиці на його честь.</p>
+      <p>В університетах створено іменні стипендії та наукові центри, присвячені його імені.</p>
+      <p>Його життя і діяльність є прикладом для молодих науковців і патріотів України.</p>
+    </div>
+  </section>
+
+  <!-- Slide 11 -->
+  <section class="slide container" id="slide10" data-aos="fade-left">
+    <img src="images/image10.jpg" alt="Вплив на майбутнє" />
+    <div class="slide-content">
+      <h2>Вплив на майбутнє</h2>
+      <p>Внесок Івана Пулюя у фізику і медицину допоміг закласти фундамент сучасних технологій рентгенології.</p>
+      <p>Його інноваційні ідеї продовжують надихати науковців у всьому світі.</p>
+      <p>Визнання Пулюя як піонера науки зростає з часом завдяки дослідженням істориків науки.</p>
+      <p>Він залишається символом української науки і культури на світовій арені.</p>
+    </div>
+  </section>
+
+  <!-- Slide 12 (джерела) -->
+  <section class="slide container" id="slide11" data-aos="zoom-in">
+    <div class="slide-content text-center">
+      <h2>Джерела</h2>
+      <ul class="sources">
+        <li><i class="fas fa-globe"></i> Gemini</li>
+        <li><i class="fas fa-robot"></i> ChatGPT</li>
+        <li><i class="fas fa-search"></i> Google</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<!-- Навігація -->
+<div class="nav-buttons">
+  <button class="btn btn-outline-warning" onclick="prevSlide()">
+    <i class="fas fa-arrow-left"></i> Назад
+  </button>
+  <button class="btn btn-warning" onclick="nextSlide()">
+    Далі <i class="fas fa-arrow-right"></i>
+  </button>
+</div>
+
+<!-- JS бібліотеки -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Показати початковий слайд
+  showSlide(currentSlide);
+</script>
+
+</body>
+</html>
