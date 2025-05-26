@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #f9f0ff, #fff0f5);
+  background: linear-gradient(135deg, #ffe6f0, #f0e6ff);
   color: #5a4e7c;
   display: flex;
   flex-direction: column;
@@ -26,10 +26,10 @@ header {
   text-align: center;
   font-weight: 700;
   font-size: 2.4rem;
-  color: #7e57c2;
-  background: linear-gradient(135deg, #ede7f6, #d1c4e9);
+  color: #a64ca6;
+  background: linear-gradient(135deg, #f5d0ff, #e6b3ff);
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(126, 87, 194, 0.2);
+  box-shadow: 0 10px 25px rgba(166, 76, 166, 0.3);
   user-select: none;
   margin-bottom: 40px;
 }
@@ -37,15 +37,15 @@ header {
 .slide {
   background: #ffffffdd;
   border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(126, 87, 194, 0.18);
+  box-shadow: 0 8px 24px rgba(166, 76, 166, 0.18);
   max-width: 900px;
   width: 100%;
   padding: 40px 50px;
   margin-bottom: 30px;
   display: none;
   flex-direction: column;
-  font-size: 1.3rem;
-  line-height: 1.6;
+  font-size: 1.4rem;
+  line-height: 1.7;
   color: #5a4e7c;
 }
 
@@ -57,7 +57,7 @@ header {
   margin-top: 0;
   font-weight: 800;
   font-size: 2.6rem;
-  color: #6a3f8f;
+  color: #933d93;
   margin-bottom: 25px;
   text-align: center;
   letter-spacing: 0.04em;
@@ -76,8 +76,8 @@ header {
   width: 100%;
   height: auto;
   border-radius: 20px;
-  border: 4px solid #b39ddb;
-  box-shadow: 0 12px 30px rgba(123, 104, 238, 0.4);
+  border: 4px solid #d79cd7;
+  box-shadow: 0 12px 30px rgba(215, 156, 215, 0.4);
   flex-shrink: 0;
 }
 
@@ -85,8 +85,8 @@ header {
   flex: 1 1 350px;
   min-width: 280px;
   color: #5a4e7c;
-  font-size: 1.25rem;
-  line-height: 1.65;
+  font-size: 1.3rem;
+  line-height: 1.7;
 }
 
 .slide-text ul {
@@ -95,7 +95,7 @@ header {
 }
 
 .slide-text li {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .navigation {
@@ -108,7 +108,7 @@ header {
 }
 
 .navigation button {
-  background: linear-gradient(135deg, #d1c4e9, #9575cd);
+  background: linear-gradient(135deg, #e6b3ff, #a64ca6);
   border: none;
   padding: 16px 40px;
   font-size: 1.35rem;
@@ -116,29 +116,29 @@ header {
   color: #fff;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 8px 22px rgba(149, 117, 205, 0.6);
+  box-shadow: 0 8px 22px rgba(166, 76, 166, 0.6);
   transition: background 0.3s ease, transform 0.2s ease;
   user-select: none;
   min-width: 140px;
 }
 
 .navigation button:hover {
-  background: linear-gradient(135deg, #7e57c2, #5e35b1);
+  background: linear-gradient(135deg, #933d93, #6b2a6b);
   transform: scale(1.05);
 }
 
 .navigation button:disabled {
-  background: #c8b9e5;
+  background: #d9b2d9;
   cursor: default;
   box-shadow: none;
   transform: none;
-  color: #7e7a99;
+  color: #815881;
 }
 
 @media (max-width: 700px) {
   .slide {
     padding: 25px 25px;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
   .slide h2 {
     font-size: 2.2rem;
@@ -164,11 +164,14 @@ header {
 </style>
 </head>
 <body>
-<header>Презентація з історії України<br>Учениці 9-Б класу Стандричук Анни<br>Тема: Агатангел Кримський - людина яка знала 60 мов</header>
 
-<div class="slide active" id="slide1">
+<div class="slide active" id="slide0">
+  <header>Презентація з історії України<br>Учениці 9-Б класу Стандричук Анни<br>Тема: Агатангел Кримський - людина яка знала 60 мов</header>
+</div>
+
+<div class="slide" id="slide1">
   <div class="slide-content">
-    <img src="path_to_photo1.jpg" alt="Портрет Агатангела Кримського" />
+    <img src="images/1.jpeg" alt="Портрет Агатангела Кримського" />
     <div class="slide-text">
       <h2>Хто такий Агатангел Кримський</h2>
       <ul>
@@ -184,7 +187,7 @@ header {
 
 <div class="slide" id="slide2">
   <div class="slide-content">
-    <img src="path_to_photo2.jpg" alt="Мови Кримського" />
+    <img src="images/2.jpeg" alt="Мови Кримського" />
     <div class="slide-text">
       <h2>Його знання і мови</h2>
       <ul>
@@ -198,7 +201,6 @@ header {
 
 <div class="slide" id="slide3">
   <div class="slide-content">
-    <img src="path_to_photo3.jpg" alt="Наукова діяльність Кримського" />
     <div class="slide-text">
       <h2>Наукова та літературна діяльність</h2>
       <ul>
@@ -213,7 +215,7 @@ header {
 
 <div class="slide" id="slide4">
   <div class="slide-content">
-    <img src="path_to_photo4.jpg" alt="Академія наук України" />
+    <img src="images/3.jpeg" alt="Академія наук України" />
     <div class="slide-text">
       <h2>Академія наук України</h2>
       <ul>
@@ -227,7 +229,7 @@ header {
 
 <div class="slide" id="slide5">
   <div class="slide-content">
-    <img src="path_to_photo5.jpg" alt="Репресії Кримського" />
+    <img src="images/4.jpeg" alt="Репресії Кримського" />
     <div class="slide-text">
       <h2>Чому про нього забули</h2>
       <ul>
@@ -242,7 +244,6 @@ header {
 
 <div class="slide" id="slide6">
   <div class="slide-content">
-    <img src="path_to_photo6.jpg" alt="Цікаві факти про Кримського" />
     <div class="slide-text">
       <h2>Цікаві факти</h2>
       <ul>
@@ -251,7 +252,12 @@ header {
         <li>У Європі вважали його генієм</li>
         <li>Сам говорив: «Я був українцем не з книжок, а з душі»</li>
         <li>14 років писав книжки!</li>
-        <li>Вже в підлітковому віці володів кількома мовами</li>
+        <li>Уже в підлітковому віці перекладав вірші з перської, арабської та латинської мов</li>
+        <li>Вивчив японську мову ще до того, як Японію “відкрили” для світу</li>
+        <li>Жив у Лівані, Єгипті, Сирії, щоб краще зрозуміти культуру і мову</li>
+        <li>Його праці вивчають навіть за кордоном (Японія, Туреччина, Франція)</li>
+        <li>Його рід походив із кримських татар, але він був палким українцем</li>
+        <li>Навіть під тортурами не зрікся України</li>
       </ul>
     </div>
   </div>
@@ -259,29 +265,13 @@ header {
 
 <div class="slide" id="slide7">
   <div class="slide-content">
-    <img src="path_to_photo7.jpg" alt="Особисте життя Кримського" />
     <div class="slide-text">
-      <h2>Особисте життя</h2>
+      <h2>Чому це важливо</h2>
       <ul>
-        <li>Любив читати та вчитися усе життя</li>
-        <li>Проводив багато часу в бібліотеках</li>
-        <li>Вірив у силу освіти і знань</li>
-        <li>Залишив великий спадок для майбутніх поколінь</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="slide" id="slide8">
-  <div class="slide-content">
-    <img src="path_to_photo8.jpg" alt="Пам’ять про Кримського" />
-    <div class="slide-text">
-      <h2>Пам’ять про Агатангела Кримського</h2>
-      <ul>
-        <li>Відновлено його ім’я і внесок в науку</li>
-        <li>В Києві є вулиця його імені</li>
-        <li>Його роботи вивчають в університетах</li>
-        <li>Приклад для молодих дослідників і лінгвістів</li>
+        <li>Агатангел Кримський — приклад того, що українці можуть бути світовими геніями</li>
+        <li>Його життя — це поєднання науки, культури і любові до України</li>
+        <li>Агатангел Кримський — наш український Леонардо да Вінчі</li>
+        <li>Генієм не народжуються, а стають завдяки знанням і любові до свого народу</li>
       </ul>
     </div>
   </div>
@@ -296,31 +286,31 @@ header {
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
-let currentSlide = 0;
+let current = 0;
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
     slide.classList.toggle('active', i === index);
   });
-  prevBtn.disabled = index === 0;
-  nextBtn.disabled = index === slides.length - 1;
+  prevBtn.disabled = (index === 0);
+  nextBtn.disabled = (index === slides.length - 1);
 }
 
 prevBtn.addEventListener('click', () => {
-  if (currentSlide > 0) {
-    currentSlide--;
-    showSlide(currentSlide);
+  if(current > 0) {
+    current--;
+    showSlide(current);
   }
 });
 
 nextBtn.addEventListener('click', () => {
-  if (currentSlide < slides.length - 1) {
-    currentSlide++;
-    showSlide(currentSlide);
+  if(current < slides.length - 1) {
+    current++;
+    showSlide(current);
   }
 });
 
-showSlide(currentSlide);
+showSlide(current);
 </script>
 
 </body>
