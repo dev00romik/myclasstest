@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Презентація про Агатангела Кримського</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #f9f0ff, #fff0f5);
+  color: #5a4e7c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 10px;
+}
+
+header {
+  width: 100%;
+  max-width: 900px;
+  padding: 25px 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #7e57c2;
+  background: linear-gradient(135deg, #ede7f6, #d1c4e9);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(126, 87, 194, 0.2);
+  user-select: none;
+  margin-bottom: 40px;
+}
+
+.slide {
+  background: #ffffffdd;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(126, 87, 194, 0.18);
+  max-width: 900px;
+  width: 100%;
+  padding: 40px 50px;
+  margin-bottom: 30px;
+  display: none;
+  flex-direction: column;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #5a4e7c;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide h2 {
+  margin-top: 0;
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: #6a3f8f;
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.slide-content img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 4px solid #b39ddb;
+  box-shadow: 0 12px 30px rgba(123, 104, 238, 0.4);
+  flex-shrink: 0;
+}
+
+.slide-text {
+  flex: 1 1 350px;
+  min-width: 280px;
+  color: #5a4e7c;
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+
+.slide-text ul {
+  padding-left: 25px;
+  margin-top: 0;
+}
+
+.slide-text li {
+  margin-bottom: 14px;
+}
+
+.navigation {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 50px;
+}
+
+.navigation button {
+  background: linear-gradient(135deg, #d1c4e9, #9575cd);
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(149, 117, 205, 0.6);
+  transition: background 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  min-width: 140px;
+}
+
+.navigation button:hover {
+  background: linear-gradient(135deg, #7e57c2, #5e35b1);
+  transform: scale(1.05);
+}
+
+.navigation button:disabled {
+  background: #c8b9e5;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+  color: #7e7a99;
+}
+
+@media (max-width: 700px) {
+  .slide {
+    padding: 25px 25px;
+    font-size: 1.15rem;
+  }
+  .slide h2 {
+    font-size: 2.2rem;
+  }
+  .slide-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .slide-content img {
+    max-width: 90%;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+  .slide-text {
+    min-width: auto;
+  }
+  .navigation button {
+    font-size: 1.2rem;
+    padding: 14px 30px;
+    min-width: 120px;
+  }
+}
+</style>
+</head>
+<body>
+<header>Презентація з історії України<br>Учениці 9-Б класу Стандричук Анни<br>Тема: Агатангел Кримський - людина яка знала 60 мов</header>
+
+<div class="slide active" id="slide1">
+  <div class="slide-content">
+    <img src="path_to_photo1.jpg" alt="Портрет Агатангела Кримського" />
+    <div class="slide-text">
+      <h2>Хто такий Агатангел Кримський</h2>
+      <ul>
+        <li>Народився: 3 січня 1871, Володимир-Волинський</li>
+        <li>Помер: 25 січня 1942 у Києві</li>
+        <li>Лінгвіст, історик, письменник, перекладач</li>
+        <li>Один із засновників Академії наук України</li>
+        <li>Знав понад 60 мов</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide2">
+  <div class="slide-content">
+    <img src="path_to_photo2.jpg" alt="Мови Кримського" />
+    <div class="slide-text">
+      <h2>Його знання і мови</h2>
+      <ul>
+        <li>Знав: арабську, перську, турецьку, китайську, японську, санскрит, латинь, грецьку, іврит та інші</li>
+        <li>Вивчав мови самостійно, без репетиторів</li>
+        <li>Вивчав релігії, звичаї і культуру Сходу</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide3">
+  <div class="slide-content">
+    <img src="path_to_photo3.jpg" alt="Наукова діяльність Кримського" />
+    <div class="slide-text">
+      <h2>Наукова та літературна діяльність</h2>
+      <ul>
+        <li>Заснував історію ісламських народів в Україні</li>
+        <li>Переклав українською мовою Коран</li>
+        <li>Писав наукові праці, казки, вірші</li>
+        <li>Автор понад 1000 наукових робіт</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide4">
+  <div class="slide-content">
+    <img src="path_to_photo4.jpg" alt="Академія наук України" />
+    <div class="slide-text">
+      <h2>Академія наук України</h2>
+      <ul>
+        <li>Один із засновників АН України</li>
+        <li>Перший її неформальний керівник</li>
+        <li>Вплинув на розвиток науки, філології та орієнталістики в Україні</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide5">
+  <div class="slide-content">
+    <img src="path_to_photo5.jpg" alt="Репресії Кримського" />
+    <div class="slide-text">
+      <h2>Чому про нього забули</h2>
+      <ul>
+        <li>У 1930-х — репресії Сталіна</li>
+        <li>Звинувачений у “буржуазному націоналізмі”</li>
+        <li>Засуджений, ув’язнений, помер у тюрмі</li>
+        <li>Лише через багато років про нього знову згадали</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide6">
+  <div class="slide-content">
+    <img src="path_to_photo6.jpg" alt="Цікаві факти про Кримського" />
+    <div class="slide-text">
+      <h2>Цікаві факти</h2>
+      <ul>
+        <li>Навіть у тюрмі писав наукові тексти!</li>
+        <li>Один із перших українців, хто переклав Коран</li>
+        <li>У Європі вважали його генієм</li>
+        <li>Сам говорив: «Я був українцем не з книжок, а з душі»</li>
+        <li>14 років писав книжки!</li>
+        <li>Вже в підлітковому віці володів кількома мовами</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide7">
+  <div class="slide-content">
+    <img src="path_to_photo7.jpg" alt="Особисте життя Кримського" />
+    <div class="slide-text">
+      <h2>Особисте життя</h2>
+      <ul>
+        <li>Любив читати та вчитися усе життя</li>
+        <li>Проводив багато часу в бібліотеках</li>
+        <li>Вірив у силу освіти і знань</li>
+        <li>Залишив великий спадок для майбутніх поколінь</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide8">
+  <div class="slide-content">
+    <img src="path_to_photo8.jpg" alt="Пам’ять про Кримського" />
+    <div class="slide-text">
+      <h2>Пам’ять про Агатангела Кримського</h2>
+      <ul>
+        <li>Відновлено його ім’я і внесок в науку</li>
+        <li>В Києві є вулиця його імені</li>
+        <li>Його роботи вивчають в університетах</li>
+        <li>Приклад для молодих дослідників і лінгвістів</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="navigation">
+  <button id="prevBtn" disabled>Назад</button>
+  <button id="nextBtn">Далі</button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+  prevBtn.disabled = index === 0;
+  nextBtn.disabled = index === slides.length - 1;
+}
+
+prevBtn.addEventListener('click', () => {
+  if (currentSlide > 0) {
+    currentSlide--;
+    showSlide(currentSlide);
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (currentSlide < slides.length - 1) {
+    currentSlide++;
+    showSlide(currentSlide);
+  }
+});
+
+showSlide(currentSlide);
+</script>
+
+</body>
+</html>
