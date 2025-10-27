@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>фінал</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg,#ffe6f2,#fff0f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+}
+h1 {
+  color: #ff4f9d;
+  font-size: 36px;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease forwards;
+}
+p {
+  font-size: 20px;
+  color: #ff4f9d;
+  margin: 8px 0;
+  line-height: 1.5;
+  animation: fadeIn 1.5s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+.icon-row i {
+  font-size: 40px;
+  color: #ff4f9d;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+.flower {
+  position: absolute;
+  font-size: 30px;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); }
+  100% { transform: translateY(-10vh) rotate(360deg); }
+}
+</style>
+</head>
+<body>
+
+<h1>Ти молодець 💖</h1>
+<p>Ти робиш мене щаслив і мені біля тебе дуже добре, тому я дуже сильно тебе люблю🌸</p>
+<p>Я чекаю нашої зустрічі, кожна хвилина без тебе здається вічністю❤️</p>
+<p>Ти моя найкраща, моя любима і моя елпешечка🩷</p>
+
+<div class="icon-row">
+  <i class="ri-heart-3-fill"></i>
+  <i class="ri-flower-fill"></i>
+  <i class="ri-heart-3-fill"></i>
+  <i class="ri-flower-fill"></i>
+  <i class="ri-heart-3-fill"></i>
+</div>
+
+<script>
+// Створимо багато квітів
+const numFlowers = 60; 
+for(let i=0; i<numFlowers; i++){
+  const flower = document.createElement("i");
+  flower.className = "ri-flower-fill flower";
+  flower.style.left = Math.random() * 100 + "%";
+  flower.style.fontSize = (20 + Math.random()*30) + "px"; 
+  flower.style.animationDuration = (4 + Math.random()*6) + "s"; 
+  flower.style.animationDelay = Math.random() * 5 + "s"; 
+  document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
